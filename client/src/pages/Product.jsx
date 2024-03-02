@@ -135,7 +135,7 @@ const Product = () => {
     }
   }
   const handleClick = ()=>{
-    dispatch(addProduct({product,quantity,price: product.price*quantity}))
+    dispatch(addProduct({...product,quantity,color,size}))
   }
   return (
     <Container>
@@ -171,7 +171,9 @@ const Product = () => {
                         <Amount>{quantity}</Amount>
                         <Add onClick={()=>{handleQuantity("inc")}}/>
                     </AmountContainer>
-                    <Button onClick={handleClick}>ADD TO CART</Button>
+                    <Button onClick={handleClick}>
+                    ADD TO CART
+                    </Button>
                 </AddContainer>
             </InfoContainer>
         </Wrapper>
